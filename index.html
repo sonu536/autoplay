@@ -1,31 +1,41 @@
 <html>
-<link href="mobile_files/extra.css" rel="stylesheet">
 <style>
-.video-con
-  { border:none;
-  }
-.responsive-video
-  { padding-bottom:150%;
-  }
-#cfs
-    {  background-image: url(/mobile_files/click-to-play-sound-m.png?v4);
-      background-size:cover;
-    }
-.cov 
-   {
-     background-image: url(/mobile_files/alt-player-continue-2-m.png) !important;   
-   } 
-  </style>
-  
-  <div class="video-con">
+#cfs {
+	background-image: url(/sp-vsl-1/images/click-start-vertical-mobile.jpg?v4)!important;
+}
+.cov {
+	background-image: url(/sp-vsl-1//images/video-cover-vertical.png?v4) !important;
+	background-size: cover;
+}
+</style>
+<div id="youtube-container" class="video-con">
               <div class="responsive-video">
                 <div id="loadingVideo" style="display:none;"></div>
                 <div id="cfs" style="display:block;"></div>
-		      <div class="cov" style="display: none; background-image: url(&quot;/mobile_files/alt-player-continue-2-m.png&quot;);"></div>
+                <div class="cov" style="display: none; background-image: url(&quot;/sp-vsl-1/images/video-cover.png&quot;);"></div>
                 <div class="covall"></div>
-                <iframe id="player" allowfullscreen="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" title="YouTube video player" src="https://www.youtube.com/embed/a3ICNMQW7Ok?autoplay=1&amp;cc_load_policy=0&amp;controls=0&amp;disablekb=1&amp;fs=0&amp;playsinline=1&amp;modestbranding=1&amp;iv_load_policy=3&amp;rel=0&amp;showinfo=0&amp;host=https%3A%2F%2Fwww.youtube.com&amp;enablejsapi=1&amp;origin=https%3A%2F%2Fauto-test.netlify.app&amp;widgetid=1" __idm_id__="67639297" width="640" height="360" frameborder="0"></iframe>
+                <iframe id="player" allowfullscreen="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" title="YouTube video player" src="https://www.youtube.com/embed/n0Jucvm2_ZA?autoplay=1&amp;cc_load_policy=0&amp;controls=0&amp;disablekb=1&amp;fs=0&amp;playsinline=1&amp;modestbranding=1&amp;iv_load_policy=3&amp;rel=0&amp;showinfo=0&amp;host=https%3A%2F%2Fwww.youtube.com&amp;enablejsapi=1&amp;origin=https%3A%2F%2Fauto-test.netlify.app&amp;widgetid=1" width="640" height="360" frameborder="0"></iframe>
               </div>
             </div>
-	  <script src="/mobile_files/jquery.js"></script>
-	<script src="/mobile_files/youtube-sp-m-cnew-1.js"></script> 
+			
+			
+<script src="/mobile_files/jquery.js"></script> 
+<script src="/mobile_files/player.js"></script> 
+ 
+<script id="desktopjs" src="/mobile_files/youtube-player-new.js"></script> 			
+			<script>    
+ if (navigator.userAgent.match(/(iPad)|(iPhone)|(iPod)|(android)|(webOS)/i)) {  
+  $('#desktopjs').remove();
+  $('#extra-youtube').remove(); 
+  $('#youtube-container').remove();   
+  var ctime = 3105000; //51  minutes  45  seconds  (3105 seconds)  
+ }
+  else 
+  { 
+   $('#mobilejs').remove();
+   $('#extra-vimeo').remove(); 
+   $('#vimeo-container').remove();   
+   var ctime = 3140000; //52 minutes and 20 seconds (3140 secs) 
+  }  
+</script>
 </html>
